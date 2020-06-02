@@ -97,3 +97,16 @@
         console.log(globalScope); // "I am globally scoped!"
         // console.log(localScope) // RefError: localScope is not defined
         // console.log(alsoLocal) // RefError: alsoLocal is not defined
+/**
+ * 
+ * 
+ *   > FINAL QUESTION WE ARE SUPPOSED TO ANSWER
+ * 
+ */     var global = "Hey";
+
+        function whatWillHappen(global){ // Parameter is also named 'global'
+            console.log(global); // Log 'global' to the console...
+        }
+
+        whatWillHappen(global); // When we invoke the function, "Hey" is logged to the console.
+       
