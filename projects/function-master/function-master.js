@@ -3,6 +3,9 @@
 //////////////////////////////////////////////////////////////////////
 
 function objectValues(object) {
+    
+    // Return the object's values in an array
+    return Object.values(object);
 
 } 
 
@@ -11,6 +14,8 @@ function objectValues(object) {
 //////////////////////////////////////////////////////////////////////
 
 function keysToString(object) {
+    
+    return Object.keys(object).split(" ");
 
 }
 
