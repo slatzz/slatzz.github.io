@@ -15,8 +15,10 @@ function objectValues(object) {
 
 function keysToString(object) {
     
-    return Object.keys(object).split(" ");
-
+    // Convert object keys to strings in array
+        // Use join method to extract strings from array
+    return Object.keys(object).join(" ");
+    
 }
 
 //////////////////////////////////////////////////////////////////////
@@ -24,6 +26,10 @@ function keysToString(object) {
 //////////////////////////////////////////////////////////////////////
 
 function valuesToString(object) {
+    
+    // Convert object values to strings in array
+        // Use join method to extract strings from array
+    return Object.values(object).join(" ");
     
 }
 
@@ -33,6 +39,14 @@ function valuesToString(object) {
 
 function arrayOrObject(collection) {
     
+    if(Array.isArray(collection)){
+        return "array";
+        
+   } else if(typeof collection === "object"){
+       
+        return "object";
+   }
+    
 }
 
 //////////////////////////////////////////////////////////////////////
@@ -41,6 +55,7 @@ function arrayOrObject(collection) {
 
 function capitalizeWord(string) {
     
+    return string[0].toUpperCase();
 }
 
 //////////////////////////////////////////////////////////////////////
@@ -49,6 +64,13 @@ function capitalizeWord(string) {
 
 function capitalizeAllWords(string) {
     
+    for(let i = 0; i < string.length; i++){
+        
+        return string[i][0].toUpperCase();
+    }
+    
+    return string;
+    
 }
 
 //////////////////////////////////////////////////////////////////////
@@ -56,6 +78,8 @@ function capitalizeAllWords(string) {
 //////////////////////////////////////////////////////////////////////
 
 function welcomeMessage(object) {
+    
+    return "Welcome " + object.name;
 
 }
 
@@ -64,6 +88,8 @@ function welcomeMessage(object) {
 //////////////////////////////////////////////////////////////////////
 
 function profileInfo(object) {
+    
+   return object.name[0].toUpperCase() + " " + "is a" + " " + object.species[0].toUpperCase();
 
 }
 
@@ -72,6 +98,15 @@ function profileInfo(object) {
 //////////////////////////////////////////////////////////////////////
 
 function maybeNoises(object) {
+    
+    if(object.hasOwnProperty("noises")){
+        
+        return Object.values(object).join(" ");
+        
+    } else if (object["noises"].length === 0 || object.length === 0){
+        
+        return "there are no noises";
+    }
 
 }
 
@@ -81,6 +116,17 @@ function maybeNoises(object) {
 
 function hasWord(string, word) {
 
+ // Split the string into an array
+ let stringArray = string.split(" ");
+    // Use includes method to check if the array includes the word
+    if(stringArray.includes(word)){
+        // Return true if the word is in the array
+        return true;
+     
+    } else{
+        // Return false if the word is not included
+        return false;
+    }
 }
 
 //////////////////////////////////////////////////////////////////////
@@ -88,7 +134,12 @@ function hasWord(string, word) {
 //////////////////////////////////////////////////////////////////////
 
 function addFriend (name, object) {
-
+    // Takes a name and an object
+        // Add the name to the object's friend's array
+            // Return the updated object
+        object.friends.push(name);
+        
+        return object;
 }
 
 //////////////////////////////////////////////////////////////////////
@@ -96,6 +147,8 @@ function addFriend (name, object) {
 //////////////////////////////////////////////////////////////////////
 
 function isFriend(name, object) {
+    
+    
 
 }
 

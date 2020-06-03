@@ -38,7 +38,7 @@
  * 
  * 3. VARIABLES DECLARED WITH LET
  * 
- *   a. Variables declared with the 'let' keyword are locally scoped and hoisted to the top
+ *   a. Variables declared with the 'let' keyword are block scoped and hoisted to the top
  *   of their scope. These variables are not available until the interpreter reaches the
  *   line of code at which the variable is declared. Like 'var', variables declared with 
  *   'let' can be re-assigned. Like 'const', variables declared with 'let' are NOT globally
