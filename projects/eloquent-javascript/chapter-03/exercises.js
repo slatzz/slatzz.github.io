@@ -2,32 +2,75 @@
 // min /////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
 
-function min() {
-
+function min(num1, num2) {
+  // Compare the two numbers
+  if(num1 < num2){ // Return num1 if less than num2
+    return num1;
+  } else { // Otherwise, return num2
+    return num2;
+  }
 }
 
 ////////////////////////////////////////////////////////////////////////////////
 // isEven //////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
 
-function isEven() {
-
+function isEven(number) {
+  
+  // Base case
+  if(number === 0){ // Check if number is 0
+    return true;
+  } else if(number === 1){ // Check if number is 1
+    return false;
+    
+  // Recursive case
+  } else if(number < 0){ // Check for negative numbers. If negative, make it positive
+    return isEven(-number);
+  } else {
+    return isEven(number - 2); // If number is not even, make it even
+  }
 }
 
 ////////////////////////////////////////////////////////////////////////////////
 // countChars //////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
 
-function countChars() {
-
+function countChars(string, char) {
+  
+  // Split string into array
+  let charArray = string.toLowerCase().split("");
+  
+  // Create a new variable assigned to an array literal
+  let count = [];
+    // Loop through array to match char
+    for(let i = 0; i < charArray.length; i++){
+      
+      if(charArray[i] == char){
+      // Push matching chars into new array
+        count.push(charArray[i]);
+      }
+    }
+    // Return the array's length
+    return count.length;
 }
 
 ////////////////////////////////////////////////////////////////////////////////
 // countBs /////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
 
-function countBs() {
-
+function countBs(string) {
+  // Create a new variable assigned to an array literal
+  let theBeez = [];
+  // Split string into array
+  let beezArr = string.split("");
+    // Loop through array to strictly compare characters to "B"
+    for(let i = 0; i < beezArr.length; i++){
+      if(beezArr[i] === "B"){
+      // Push matching characters into new array
+        theBeez.push(beezArr[i]);
+      }
+    }   // Return length of array
+        return theBeez.length;
 }
 
 ////////////////////////////////////////////////////////////////////////////////
