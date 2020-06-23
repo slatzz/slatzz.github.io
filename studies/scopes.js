@@ -102,11 +102,20 @@
  * 
  *   > FINAL QUESTION WE ARE SUPPOSED TO ANSWER
  * 
+ *      When our global variable has the same name as a parameter, this is not ideal coding. 
+ *      It is best practice to name our parameters something different than our global variables.
+ *      
+ *      Thus, if we name our parameter the same name as a global parameter, we will be accessing
+ *      our parameter and NOT our global variable.
+ * 
  */     var global = "Hey";
 
         function whatWillHappen(global){ // Parameter is also named 'global'
-            console.log(global); // Log 'global' to the console...
+            console.log(global); // This will log whatever we input as our 'global' parameter.
         }
 
-        whatWillHappen(global); // When we invoke the function, "Hey" is logged to the console.
+        whatWillHappen(global); // When we invoke the function, the global variable is logged
+        // and "Hey" is logged to the console.
+        
+        whatWillHappen("Hello world!"); // "Hello world!" is now logged to the console.
        

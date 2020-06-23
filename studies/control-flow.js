@@ -34,6 +34,17 @@
         }
 
 /**
+ *    b. We can have multiple if statements and nested if statements. Ideally, you want to use 
+ *      one if statement and you can have as many else if statements required to check for all 
+ *      conditions. Ultimately, you will end with one else statement.
+ * 
+ *    c. The interpreter will run one if block at a time. If the first if statement resolves to 
+ *      true, then the interpreter will stop running the code. If the if statement resolves to
+ *      false, then it will check the next else-if statement. If true the code stops, but if false
+ *      then it will default to running your else statement. In sum, the code stops running when
+ *      a condition is met.
+ *
+ *
  *
  * 2. SWITCH STATEMENTS
  * 
