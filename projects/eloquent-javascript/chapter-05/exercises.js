@@ -2,31 +2,66 @@
 // flatten /////////////////////////////////////////////////////////////////////
 // /////////////////////////////////////////////////////////////////////////////
 
-function flatten() {
-
+function flatten(anArrayOfArrays) {
+  
+  // Reduce the subarrays in the input array into one array
+  let flat = anArrayOfArrays.reduce((subArray1, subArray2) => {
+    
+    return subArray1.concat(subArray2);
+  
+  });
+    // Return the final result
+    return flat;
 }
 
 // /////////////////////////////////////////////////////////////////////////////
 // loop ////////////////////////////////////////////////////////////////////////
 // /////////////////////////////////////////////////////////////////////////////
 
-function loop() {
-
+function loop(start, test, update, body) {
+  
+  // Use parameters to loop over elements and update value
+    // Call the functions over the values
+  for(let value = start; test(value); value = update(value)) {
+    // Call body function over value
+    body(value);
+  }
 }
 
 // /////////////////////////////////////////////////////////////////////////////
 // every ///////////////////////////////////////////////////////////////////////
 // /////////////////////////////////////////////////////////////////////////////
 
-function every() {
-
+function every(value, test) {
+    
+    // Use every method to check if value passes test
+    return value.every(test);
 }
 
 // /////////////////////////////////////////////////////////////////////////////
 // dominantDirection ///////////////////////////////////////////////////////////
 // /////////////////////////////////////////////////////////////////////////////
 
-function dominantDirection() {
+function dominantDirection(string) {
+  
+  let test = countBy(string, function(char){
+    
+    // Call charScript function
+    const scriptObj = characterScript(char.charCodeAt())
+    
+    // Return the direction of the script
+    if(scriptObj){
+      return scriptObj.direction;
+        }
+    
+     });
+    // Sort the counts
+    test.sort(function(a, b){
+      
+      return b.count - a.count;
+    })
+    // Return the direction of the script
+    return test[0].name;
 
 }
 
